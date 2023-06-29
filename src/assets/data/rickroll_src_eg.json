@@ -1,0 +1,294 @@
+{
+    "src": {
+        "HelloWorldSrc": [
+            "take me to ur heart",
+            "    give message up \"never gonna give you up, never gonna let you down~\"",
+            "    i just wanna tell u how im feeling message",
+            "say goodbye~"
+        ],
+        "IfSrc": [
+            "take me to ur heart",
+            "    give age up 20",
+            "    and if u ask me how im feeling age > 18",
+            "        i just wanna tell u how im feeling  \"Adult\n\"",
+            "    say goodbye",
+            "    and if u ask me how im feeling age <= 6",
+            "        i just wanna tell u how im feeling \"Kid, u know the rules, and so do I~\n\"",
+            "    say goodbye",
+            "say goodbye"
+        ],
+        "WhileLoopSrc": [
+            "take me to ur heart",
+            "    give areYouRolling up [\"Together \",\"forever\", \"and never to part\", \"Together\", \"foverer\", \"we two\"]",
+            "    give astleyCounter up 0",
+            "    together forever and never to part",
+            "        and if u ask me how im feeling astleyCounter == len(areYouRolling)",
+            "           desert u",
+            "       say goodbye",
+            "       i just wanna tell u how im feeling areYouRolling[astleyCounter] + \"\n\"",
+            "       give astleyCounter up astleyCounter + 1",
+            "   say goodbye",
+            "say goodbye"
+        ],
+        "BubbleSortSrc": []
+    },
+    "tokens": {
+        "HelloWorldTokens": [
+            [
+                "takemetourheart"
+            ],
+            [
+                "give",
+                "msg",
+                "up",
+                "\"Never gonna give you up, never gonna let you down~\\n\""
+            ],
+            [
+                "ijustwannatelluhowimfeeling:",
+                "msg"
+            ],
+            [
+                "saygoodbye"
+            ]
+        ],
+        "IfTokens": [
+            [
+                "takemetourheart"
+            ],
+            [
+                "give",
+                "age",
+                "up",
+                "20"
+            ],
+            [
+                "andifuaskmehowimfeeling",
+                "age",
+                ">",
+                "18"
+            ],
+            [
+                "ijustwannatelluhowimfeeling",
+                "\"Man, never gonna give up\\n\""
+            ],
+            [
+                "saygoodbye"
+            ],
+            [
+                "andifuaskmehowimfeeling",
+                "age",
+                "<=",
+                "6"
+            ],
+            [
+                "ijustwannatelluhowimfeeling",
+                "\"Kid, u know the rules, and so do I~\\n\""
+            ],
+            [
+                "saygoodbye"
+            ],
+            [
+                "saygoodbye"
+            ]
+        ],
+        "WhileLoopTokens": [
+            [
+                "takemetourheart"
+            ],
+            [
+                "give",
+                "areYouRolling",
+                "up",
+                "[",
+                "\"Together \"",
+                ",",
+                "\"forever\"",
+                ",",
+                "\"and never to part\"",
+                ",",
+                "\"Together\"",
+                ",",
+                "\"foverer\"",
+                ",",
+                "\"we two\"",
+                "]"
+            ],
+            [
+                "give",
+                "astleyCounter",
+                "up",
+                "0"
+            ],
+            [
+                "togetherforeverandnevertopart"
+            ],
+            [
+                "andifuaskmehowimfeeling",
+                "astleyCounter",
+                "==",
+                "len",
+                "(",
+                "areYouRolling",
+                ")"
+            ],
+            [
+                "desertu"
+            ],
+            [
+                "saygoodbye"
+            ],
+            [
+                "ijustwannatelluhowimfeeling",
+                "areYouRolling",
+                "[",
+                "astleyCounter",
+                "]",
+                "+",
+                "\"\\n\""
+            ],
+            [
+                "give",
+                "astleyCounter",
+                "up",
+                "astleyCounter",
+                "+",
+                "1"
+            ],
+            [
+                "saygoodbye"
+            ],
+            [
+                "saygoodbye"
+            ]
+        ],
+        "BubbleSortTokens": []
+    },
+    "pycode": {
+        "HelloWorldPycode": [
+            "if __name__ == \"__main__\":",
+            "    msg = \"Never gonna give you up, never gonna let you down~\n\"",
+            "    print(msg, end=\"\")",
+            "    pass"
+        ],
+        "IfPycode": [
+            "if __name__ == \"__main__\":",
+            "    age = 20",
+            "        print(\"Man, never gonna give up\n\", end=\"\")",
+            "        pass",
+            "    if age<=6",
+            "        print(\"Kid, u know the rules, and so do I~\n\", end=\"\")"
+        ],
+        "WhileLoopPycode": [
+            "if __name__ == \"__main__\":",
+            "    areYouRolling = [\"Together \",\"forever\",\"and never to part\",\"Together\",\"foverer\",\"we two\"]",
+            "    astleyCounter = 0",
+            "    while True:",
+            "        if astleyCounter==len(areYouRolling):",
+            "            break",
+            "            pass",
+            "        print(areYouRolling[astleyCounter]+\"\n\", end=\"\")",
+            "        astleyCounter = astleyCounter+1",
+            "        pass",
+            "    pass"
+        ],
+        "BubbleSortPycode": []
+    },
+    "ast": {
+        "HelloWorldAst": [
+            "func_node",
+            "main",
+            "None",
+            [
+                [
+                    "let_node",
+                    "msg",
+                    [
+                        "\"Never gonna give you up, never gonna let you down~\\n\""
+                    ]
+                ],
+                [
+                    "print_node",
+                    [
+                        "msg"
+                    ]
+                ]
+            ]
+        ],
+        "IfAst": [
+            [
+                "func_node",
+                "main",
+                "None",
+                [
+                    [
+                        "call_func_node",
+                        "",
+                        []
+                    ]
+                ]
+            ],
+            [
+                "let_node",
+                "age",
+                [
+                    "20"
+                ]
+            ],
+            [
+                "call_func_node",
+                "",
+                []
+            ],
+            [
+                "if_node",
+                [
+                    "age",
+                    ">",
+                    "18"
+                ],
+                [
+                    [
+                        "print_node",
+                        [
+                            "\"Adult\\n\""
+                        ]
+                    ]
+                ]
+            ],
+            [
+                "if_node",
+                [
+                    "age",
+                    "<=",
+                    "6"
+                ],
+                [
+                    [
+                        "print_node",
+                        [
+                            "\"Kid\\n\""
+                        ]
+                    ]
+                ]
+            ]
+        ],
+        "WhileAst": [
+            "['func_node', 'main', None, [['let_node', 'areYouRolling', ['[', '\"Together \"', ',', '\"forever\"', ',', '\"and never to part\"', ',', '\"Together\"', ',', '\"foverer\"', ',', '\"we two\"', ']']], ['call_func_node', '', []]]]",
+            "['let_node', 'astleyCounter', ['0']]",
+            "['endless_loop_node', [['if_node', ['astleyCounter', '==', 'len', '(', 'areYouRolling', ')'], [['call_func_node', 'desertu', []]]], ['print_node', ['areYouRolling', '[', 'astleyCounter', ']', '+', '\"\\n\"']], ['let_node', 'astleyCounter', ['astleyCounter', '+', '1']]]]"
+        ]
+    },
+    "result": {
+        "HelloWorldResult": "Never gonna give you up, never gonna let you down~\n",
+        "IfResult": "Man, never gonna give up",
+        "WhileLoopResult": [
+            "Together",
+            "forever",
+            "and never to part",
+            "Together",
+            "foverer",
+            "we two"
+        ],
+        "BubbleSortResult": []
+    }
+}

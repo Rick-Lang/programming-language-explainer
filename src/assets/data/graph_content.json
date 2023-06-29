@@ -1,0 +1,14 @@
+{
+    "GraphName":"Source Code",
+    "BasicInformation": "Source code is the code read from the input file.\nIt is read line by line.\nsee ",
+    "SourceCode": ["with open(src_file_name, mode='r', encoding='utf-8') as src:",
+                "    content = src.readlines()",
+                "    if len(content) > 0:",
+                "        content[-1] += '\n'",
+
+                "    for statement in content:",
+                "        current_line += 1",
+                "        print(statement)",
+                "        # `statement` is one line of source code, used later in lexer and parser"
+    ]
+}

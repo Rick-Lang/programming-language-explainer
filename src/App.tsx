@@ -11,11 +11,12 @@ function App() {
   return (
     <>
       <div className='header'>
-        <a href="https://react.dev" target="_blank">
+        {/* <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        </a> */}
+        <div>Programming language explainer - By Rick Lang</div>
       </div>
-      <div style={{height:'calc(100vh - 100px)',width:'97vw'}}>
+      <div className='content' style={{height:'calc(100vh - 100px)',width:'97vw'}}>
         <ReactFlowProvider ></ReactFlowProvider>
       </div>
        <DocText></DocText>

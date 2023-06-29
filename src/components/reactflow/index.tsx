@@ -8,14 +8,19 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   useReactFlow,
+  ConnectionMode,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 import './index.less'
 import Modal from './elements/modal/Modal'
 import CustomNode from './elements/customNode/CustomNode';
+import SimpleFloatingEdge from './elements/SimpleFloatingEdge/SimpleFloatingEdge';
 const elk = new ELK();
 const nodeTypes = {
-  // customNode: CustomNode,
+  // custom: CustomNode,
+};
+const edgeTypes = {
+  // floating: SimpleFloatingEdge,
 };
 // Elk has a *huge* amount of options to configure. To see everything you can
 // tweak check out:
@@ -105,10 +110,13 @@ function LayoutFlow() {
       zoomOnScroll={false}
       zoomOnPinch={false}
       nodeTypes={nodeTypes}
+      edgeTypes={edgeTypes}
       onConnect={onConnect}
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onNodeClick={onNodeClick}
+      connectionMode={ConnectionMode.Loose}
+      preventScrolling={false}
       selectionKeyCode={null}
       multiSelectionKeyCode={null}
       onClick={onClick}
