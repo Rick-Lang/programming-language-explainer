@@ -1,55 +1,37 @@
-import { Button, notification, Input } from 'antd';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Segmented } from 'antd';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/vs2015.css';
 import './Modal.less'
-const { TextArea } = Input;
-export default function Modal({ showModal }) {
-    const [code, setCode] = useState('')
-    useEffect(() => {
-        // document.querySelectorAll("pre code").forEach(block => {
-        //     try { hljs.highlightBlock(block); }
-        //     catch (e) { console.log(e); }
-        // });
-        const code = `
-        <div className="code-block" style={{ position: 'relative', marginTop: 8 }}>
-        <pre>
-          <code id={language} ref={preRef} className={language}>
-            {code}
-          </code>
-        </pre>
-      </div>
-      `;
-      hljs.highlightAll();
-        // const code1 = hljs?.highlight("python", code).value;
-        // setCode(code1)
-    }, [showModal])
+import jsonData from '/src/assets/data/rickroll_src_eg.json'
+import { motion, AnimatePresence } from "framer-motion";
+export default function Modal({ showModal, nodeName, ...props }: any) {
+  const [code, setCode] = useState('')
+  const [value, setValue] = useState<string | number>('helloWorld');
+  useEffect(() => {
+    nodeName && onChange('helloWorld')
+  }, [nodeName])
 
-    const content = `
-        <pre>
-          <code>
-    "take me to ur heart",
-    "    give areYouRolling up [\"Together \",\"forever\", \"and never to part\", \"Together\", \"foverer\", \"we two\"]",
-    "    give astleyCounter up 0",
-    "    together forever and never to part",
-    "        and if u ask me how im feeling astleyCounter == len(areYouRolling)",
-    "           desert u",
-    "       say goodbye",
-    "       i just wanna tell u how im feeling areYouRolling[astleyCounter] + \"\n\"",
-    "       give astleyCounter up astleyCounter + 1",
-    "   say goodbye",
-    "say goodbye"
-    </code>
-                   
-        </pre>
-     `
-    return <div className="modal" style={{ display: showModal ? '' : 'none' }}>
-        <div className='modal-content'>
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-        </div>
+  const onChange = (val) => {
+    setValue(val)
+    console.log(val, nodeName);
+
+    let code = jsonData[nodeName][val]
+    if (Array.isArray(code)) {
+      code = code.join('\n')
+    }
+    const content = ` <pre> <code> ${code} </code>  </pre>`
+    setCode(content)
+    setTimeout(() => {
+      hljs.highlightAll();
+    })
+  }
+
+  return <div {...props} className="modal" style={{ display: showModal ? '' : 'none' }}>
+    <Segmented options={['helloWorld', 'if', 'while']} value={value} onChange={onChange} />
+    <div className='modal-content'>
+          <div dangerouslySetInnerHTML={{ __html: code }} />
+
     </div>
+  </div>
 }

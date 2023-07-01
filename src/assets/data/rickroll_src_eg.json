@@ -1,12 +1,12 @@
 {
-    "src": {
-        "HelloWorldSrc": [
+    "Source": {
+        "helloWorld": [
             "take me to ur heart",
             "    give message up \"never gonna give you up, never gonna let you down~\"",
             "    i just wanna tell u how im feeling message",
             "say goodbye~"
         ],
-        "IfSrc": [
+        "if": [
             "take me to ur heart",
             "    give age up 20",
             "    and if u ask me how im feeling age > 18",
@@ -17,7 +17,7 @@
             "    say goodbye",
             "say goodbye"
         ],
-        "WhileLoopSrc": [
+        "while": [
             "take me to ur heart",
             "    give areYouRolling up [\"Together \",\"forever\", \"and never to part\", \"Together\", \"foverer\", \"we two\"]",
             "    give astleyCounter up 0",
@@ -32,8 +32,8 @@
         ],
         "BubbleSortSrc": []
     },
-    "tokens": {
-        "HelloWorldTokens": [
+    "Lexer": {
+        "helloWorld": [
             [
                 "takemetourheart"
             ],
@@ -51,7 +51,7 @@
                 "saygoodbye"
             ]
         ],
-        "IfTokens": [
+        "if": [
             [
                 "takemetourheart"
             ],
@@ -91,7 +91,7 @@
                 "saygoodbye"
             ]
         ],
-        "WhileLoopTokens": [
+        "while": [
             [
                 "takemetourheart"
             ],
@@ -163,14 +163,14 @@
         ],
         "BubbleSortTokens": []
     },
-    "pycode": {
-        "HelloWorldPycode": [
+    "transpiler: python": {
+        "helloWorld": [
             "if __name__ == \"__main__\":",
             "    msg = \"Never gonna give you up, never gonna let you down~\n\"",
             "    print(msg, end=\"\")",
             "    pass"
         ],
-        "IfPycode": [
+        "if": [
             "if __name__ == \"__main__\":",
             "    age = 20",
             "        print(\"Man, never gonna give up\n\", end=\"\")",
@@ -178,7 +178,7 @@
             "    if age<=6",
             "        print(\"Kid, u know the rules, and so do I~\n\", end=\"\")"
         ],
-        "WhileLoopPycode": [
+        "while": [
             "if __name__ == \"__main__\":",
             "    areYouRolling = [\"Together \",\"forever\",\"and never to part\",\"Together\",\"foverer\",\"we two\"]",
             "    astleyCounter = 0",
@@ -193,8 +193,8 @@
         ],
         "BubbleSortPycode": []
     },
-    "ast": {
-        "HelloWorldAst": [
+    "Parser": {
+        "helloWorld": [
             "func_node",
             "main",
             "None",
@@ -214,7 +214,7 @@
                 ]
             ]
         ],
-        "IfAst": [
+        "if": [
             [
                 "func_node",
                 "main",
@@ -272,16 +272,16 @@
                 ]
             ]
         ],
-        "WhileAst": [
+        "while": [
             "['func_node', 'main', None, [['let_node', 'areYouRolling', ['[', '\"Together \"', ',', '\"forever\"', ',', '\"and never to part\"', ',', '\"Together\"', ',', '\"foverer\"', ',', '\"we two\"', ']']], ['call_func_node', '', []]]]",
             "['let_node', 'astleyCounter', ['0']]",
             "['endless_loop_node', [['if_node', ['astleyCounter', '==', 'len', '(', 'areYouRolling', ')'], [['call_func_node', 'desertu', []]]], ['print_node', ['areYouRolling', '[', 'astleyCounter', ']', '+', '\"\\n\"']], ['let_node', 'astleyCounter', ['astleyCounter', '+', '1']]]]"
         ]
     },
-    "result": {
-        "HelloWorldResult": "Never gonna give you up, never gonna let you down~\n",
-        "IfResult": "Man, never gonna give up",
-        "WhileLoopResult": [
+    "interpreter": {
+        "helloWorld": "Never gonna give you up, never gonna let you down~\n",
+        "if": "Man, never gonna give up",
+        "while": [
             "Together",
             "forever",
             "and never to part",

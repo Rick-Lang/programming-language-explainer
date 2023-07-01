@@ -4,12 +4,23 @@ import viteLogo from '/vite.svg'
 import './App.less'
 import ReactFlowProvider from './components/reactflow/index'
 import DocText from './components/docText/docText'
-
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  MotionValue
+} from "framer-motion";
 function App() {
-  const [count, setCount] = useState(0)
-
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
   return (
     <>
+       <motion.div className="progress" style={{ scaleX }} />
       <div className='header'>
         {/* <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
