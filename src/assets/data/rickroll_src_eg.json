@@ -1,12 +1,12 @@
 {
     "Source": {
-        "helloWorld": [
+        "Hello_World": [
             "take me to ur heart",
             "    give message up \"never gonna give you up, never gonna let you down~\"",
             "    i just wanna tell u how im feeling message",
             "say goodbye~"
         ],
-        "if": [
+        "If": [
             "take me to ur heart",
             "    give age up 20",
             "    and if u ask me how im feeling age > 18",
@@ -17,7 +17,7 @@
             "    say goodbye",
             "say goodbye"
         ],
-        "while": [
+        "While": [
             "take me to ur heart",
             "    give areYouRolling up [\"Together \",\"forever\", \"and never to part\", \"Together\", \"foverer\", \"we two\"]",
             "    give astleyCounter up 0",
@@ -33,152 +33,54 @@
         "BubbleSortSrc": []
     },
     "Lexer": {
-        "helloWorld": [
-            [
-                "takemetourheart"
-            ],
-            [
-                "give",
-                "msg",
-                "up",
-                "\"Never gonna give you up, never gonna let you down~\\n\""
-            ],
-            [
-                "ijustwannatelluhowimfeeling:",
-                "msg"
-            ],
-            [
-                "saygoodbye"
-            ]
+        "Hello_World": [
+            "[takemetourheart], ",
+            "[give, msg, up, \"Never gonna give you up, never gonna let you down~\\n\"], ",
+            "[ijustwannatelluhowimfeeling, msg], ",
+            "[saygoodbye]"
         ],
-        "if": [
-            [
-                "takemetourheart"
-            ],
-            [
-                "give",
-                "age",
-                "up",
-                "20"
-            ],
-            [
-                "andifuaskmehowimfeeling",
-                "age",
-                ">",
-                "18"
-            ],
-            [
-                "ijustwannatelluhowimfeeling",
-                "\"Man, never gonna give up\\n\""
-            ],
-            [
-                "saygoodbye"
-            ],
-            [
-                "andifuaskmehowimfeeling",
-                "age",
-                "<=",
-                "6"
-            ],
-            [
-                "ijustwannatelluhowimfeeling",
-                "\"Kid, u know the rules, and so do I~\\n\""
-            ],
-            [
-                "saygoodbye"
-            ],
-            [
-                "saygoodbye"
-            ]
+        "If": [
+            "[takemetourheart], ",
+            "[give, age, up, 20], ",
+            "[andifuaskmehowimfeeling, age, >, 18], ",
+            "[ijustwannatelluhowimfeeling, \"Never gonna give up, man!\\n\"], ",
+            "[saygoodbye], ",
+            "[andifuaskmehowimfeeling, age, <=, 6], ",
+            "[ijustwannatelluhowimfeeling, \"Kid, u know the rules, and so do I~\\n\"], ",
+            "[saygoodbye], ",
+            "[saygoodbye]"
         ],
-        "while": [
-            [
-                "takemetourheart"
-            ],
-            [
-                "give",
-                "areYouRolling",
-                "up",
-                "[",
-                "\"Together \"",
-                ",",
-                "\"forever\"",
-                ",",
-                "\"and never to part\"",
-                ",",
-                "\"Together\"",
-                ",",
-                "\"foverer\"",
-                ",",
-                "\"we two\"",
-                "]"
-            ],
-            [
-                "give",
-                "astleyCounter",
-                "up",
-                "0"
-            ],
-            [
-                "togetherforeverandnevertopart"
-            ],
-            [
-                "andifuaskmehowimfeeling",
-                "astleyCounter",
-                "==",
-                "len",
-                "(",
-                "areYouRolling",
-                ")"
-            ],
-            [
-                "desertu"
-            ],
-            [
-                "saygoodbye"
-            ],
-            [
-                "ijustwannatelluhowimfeeling",
-                "areYouRolling",
-                "[",
-                "astleyCounter",
-                "]",
-                "+",
-                "\"\\n\""
-            ],
-            [
-                "give",
-                "astleyCounter",
-                "up",
-                "astleyCounter",
-                "+",
-                "1"
-            ],
-            [
-                "saygoodbye"
-            ],
-            [
-                "saygoodbye"
-            ]
+        "While": [
+            "[takemetourheart], ",
+            "[give, areYouRolling, up, [\"Together \", \"forever\", \"and never to part\", \"Together\", \"foverer\", \"we two\"], ",
+            "[give, astleyCounter, up, 0], ",
+            "[togetherforeverandnevertopart], ",
+            "[andifuaskmehowimfeeling, astleyCounter, ==, len, (, areYouRolling, )], ",
+            "[desertu], ",
+            "[saygoodbye], ",
+            "[ijustwannatelluhowimfeeling, areYouRolling, [, astleyCounter, ], + ,\"\\n\"], ",
+            "[give, astleyCounter, up, astleyCounter, +, 1], ",
+            "[saygoodbye], ",
+            "[saygoodbye]"
         ],
         "BubbleSortTokens": []
     },
     "transpiler: python": {
-        "helloWorld": [
+        "Hello_World": [
             "if __name__ == \"__main__\":",
             "    msg = \"Never gonna give you up, never gonna let you down~\n\"",
             "    print(msg, end=\"\")",
             "    pass"
         ],
-        "if": [
+        "If": [
             "if __name__ == \"__main__\":",
             "    age = 20",
-            "        print(\"Man, never gonna give up\n\", end=\"\")",
+            "        print(\"Never gonna give up, man!\n\", end=\"\")",
             "        pass",
             "    if age<=6",
             "        print(\"Kid, u know the rules, and so do I~\n\", end=\"\")"
         ],
-        "while": [
+        "While": [
             "if __name__ == \"__main__\":",
             "    areYouRolling = [\"Together \",\"forever\",\"and never to part\",\"Together\",\"foverer\",\"we two\"]",
             "    astleyCounter = 0",
@@ -194,94 +96,18 @@
         "BubbleSortPycode": []
     },
     "Parser": {
-        "helloWorld": [
-            "func_node",
-            "main",
-            "None",
-            [
-                [
-                    "let_node",
-                    "msg",
-                    [
-                        "\"Never gonna give you up, never gonna let you down~\\n\""
-                    ]
-                ],
-                [
-                    "print_node",
-                    [
-                        "msg"
-                    ]
-                ]
-            ]
+        "Hello_World": ["['func_node', 'main', None, [['let_node', 'msg', ['\"Never gonna give you up, never gonna let you down~\\n\"']], ['print_node', ['msg']]]]"
         ],
-        "if": [
-            [
-                "func_node",
-                "main",
-                "None",
-                [
-                    [
-                        "call_func_node",
-                        "",
-                        []
-                    ]
-                ]
-            ],
-            [
-                "let_node",
-                "age",
-                [
-                    "20"
-                ]
-            ],
-            [
-                "call_func_node",
-                "",
-                []
-            ],
-            [
-                "if_node",
-                [
-                    "age",
-                    ">",
-                    "18"
-                ],
-                [
-                    [
-                        "print_node",
-                        [
-                            "\"Adult\\n\""
-                        ]
-                    ]
-                ]
-            ],
-            [
-                "if_node",
-                [
-                    "age",
-                    "<=",
-                    "6"
-                ],
-                [
-                    [
-                        "print_node",
-                        [
-                            "\"Kid\\n\""
-                        ]
-                    ]
-                ]
-            ]
+        "If": ["['func_node', 'main', None, [['let_node', 'age', ['20']], ['if_node', ['age', '>', '18'], [['print_node', ['\"Man, never gonna give you up\\n\"']]]], ['if_node', ['age', '<', '6'], [['print_node', ['\"Kid, u know the rules, and so do I~\\n\"']]]]]]"
         ],
-        "while": [
-            "['func_node', 'main', None, [['let_node', 'areYouRolling', ['[', '\"Together \"', ',', '\"forever\"', ',', '\"and never to part\"', ',', '\"Together\"', ',', '\"foverer\"', ',', '\"we two\"', ']']], ['call_func_node', '', []]]]",
-            "['let_node', 'astleyCounter', ['0']]",
-            "['endless_loop_node', [['if_node', ['astleyCounter', '==', 'len', '(', 'areYouRolling', ')'], [['call_func_node', 'desertu', []]]], ['print_node', ['areYouRolling', '[', 'astleyCounter', ']', '+', '\"\\n\"']], ['let_node', 'astleyCounter', ['astleyCounter', '+', '1']]]]"
+        "While": [
+            "['func_node', 'main', None, [['let_node', 'areYouRolling', ['[', '\"Together \"', ',', '\"forever\"', ',', '\"and never to part\"', ',', '\"Together\"', ',', '\"foverer\"', ',', '\"we two\"', ']']], ['let_node', 'astleyCounter', ['0']], ['endless_loop_node', [['if_node', ['astleyCounter', '==', 'len', '(', 'areYouRolling', ')'], []], ['print_node', ['areYouRolling', '[', 'astleyCounter', ']', '+', '\"\\n\"']], ['let_node', 'astleyCounter', ['astleyCounter', '+', '1']]]]]]"
         ]
     },
-    "interpreter": {
-        "helloWorld": "Never gonna give you up, never gonna let you down~\n",
-        "if": "Man, never gonna give up",
-        "while": [
+    "Interpreter": {
+        "Hello_World": "Never gonna give you up, never gonna let you down~\n",
+        "If": "Never gonna give up, man!",
+        "While": [
             "Together",
             "forever",
             "and never to part",

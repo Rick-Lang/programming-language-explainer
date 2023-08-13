@@ -28,7 +28,7 @@ export default function Modal({ showModal, nodeName, ...props }: any) {
   }
 
   return <div {...props} className="modal" style={{ display: showModal ? '' : 'none' }}>
-    <Segmented options={['helloWorld', 'if', 'while']} value={value} onChange={onChange} />
+    <Segmented options={['Hello_World', 'If', 'While']} value={value} onChange={onChange} />
     <div className='modal-content'>
           <div dangerouslySetInnerHTML={{ __html: code }} />
 

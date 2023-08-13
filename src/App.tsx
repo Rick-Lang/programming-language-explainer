@@ -25,7 +25,7 @@ function App() {
         {/* <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a> */}
-        <div>Programming language explainer - By Rick Lang</div>
+        <div>Programming Language Explainer - By Rick Lang</div>
       </div>
       <div className='content' style={{height:'calc(100vh - 100px)',width:'97vw'}}>
         <ReactFlowProvider ></ReactFlowProvider>
