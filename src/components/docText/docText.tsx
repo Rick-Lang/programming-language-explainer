@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import gfm from 'remark-gfm'
 export default function DocText() {
     const [md,setMd]=useState('')
-    fetch('/src/assets/data/tutorial_content.md').then(res=>res.text()).then(res=>{
+    fetch('/tutorial_content.md').then(res=>res.text()).then(res=>{
         setMd(res)
     })
     return <div className="doc-text">
