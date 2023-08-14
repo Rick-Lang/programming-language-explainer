@@ -65,7 +65,7 @@
         ],
         "BubbleSortTokens": []
     },
-    "transpiler: python": {
+    "Transpiler: Python": {
         "Hello_World": [
             "if __name__ == \"__main__\":",
             "    msg = \"Never gonna give you up, never gonna let you down~\n\"",
