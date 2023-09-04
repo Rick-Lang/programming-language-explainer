@@ -1,7 +1,9 @@
 .markdown-body {
   overflow: hidden;
-    font-family:Short Stack,Ma Shan Zheng!important;
-    .header {
+  font-family: Short Stack, Ma Shan Zheng !important;
+  --limer-color: linear-gradient(90deg, #dfa2c9 0%, #5b80ed 100%);
+
+  .header {
     box-sizing: border-box;
     position: fixed;
     top: 0;
@@ -10,18 +12,18 @@
     z-index: 100;
     font-weight: 600;
     font-size: 14px;
-    background: linear-gradient(90deg, #715868 0%, #17295f 100%);
-    box-shadow: 0 16px 32px -16px rgba(0, 0, 0, .1), 0 0 0 1px rgba(0, 0, 0, .1);
+    background: var(--limer-color);
+    box-shadow: 0 16px 32px -16px rgba(188, 87, 87, 0.1), 0 0 0 1px rgba(218, 38, 38, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 0 0 50px 50px;
-    .logo {
-      height: 3em;
-      padding: 1.5em;
-      will-change: filter;
-      transition: filter 300ms;
+
+    .header-right {
+      position: absolute;
+      right: 40px;
     }
+
 
     .logo:hover {
       filter: drop-shadow(0 0 2em #646cffaa);
@@ -31,7 +33,7 @@
   .content {
     margin-top: 50px;
     overflow: hidden;
-}
+  }
 }
 
 
@@ -69,4 +71,15 @@
   bottom: 100px;
   border-radius: 10px;
   background: linear-gradient(90deg, #97748a 0%, #5971bb 100%);
+}
+
+.dark-theme {
+  color: #c9d1d9 !important;
+  background-color: #0d1117 !important;
+  --limer-color: linear-gradient(90deg, #715868 0%, #17295f 100%) !important;
+
+  pre {
+    background-color: #161b22 !important;
+    padding: 16px !important;
+  }
 }
