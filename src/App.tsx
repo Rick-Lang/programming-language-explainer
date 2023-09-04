@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.less'
 import ReactFlowProvider from './components/reactflow/index'
 import DocText from './components/docText/docText'
@@ -8,9 +5,9 @@ import {
   motion,
   useScroll,
   useSpring,
-  useTransform,
-  MotionValue
 } from "framer-motion";
+import "github-markdown-css/github-markdown-dark.css"
+import "cornercss/index.css";
 function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -19,19 +16,16 @@ function App() {
     restDelta: 0.001
   });
   return (
-    <>
-       <motion.div className="progress" style={{ scaleX }} />
+    <div className='markdown-body' >
+      <motion.div className="progress" style={{ scaleX }} />
       <div className='header'>
-        {/* <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a> */}
         <div>Programming Language Explainer - By Rick Lang</div>
       </div>
-      <div className='content' style={{height:'calc(100vh - 100px)',width:'97vw'}}>
+      <div className='content' style={{ height: 'calc(100vh - 100px)', width: '' }}>
         <ReactFlowProvider ></ReactFlowProvider>
       </div>
-       <DocText></DocText>
-    </>
+      <DocText></DocText>
+    </div>
   )
 }
 
