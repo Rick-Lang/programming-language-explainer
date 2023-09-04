@@ -24,6 +24,6 @@ git commit -m '双哥哥又在辛苦的学习更新代码了'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f https://rick-lang.github.io/programming-language-explainer.git gh-pages
+git push -f https://github.com/rick-lang/programming-language-explainer.git master:gh-pages
 
 cd -
