@@ -7,9 +7,9 @@ import jsonData from '/src/assets/data/rickroll_src_eg.json'
 import { motion, AnimatePresence } from "framer-motion";
 export default function Modal({ showModal, nodeName, ...props }: any) {
   const [code, setCode] = useState('')
-  const [value, setValue] = useState<string | number>('helloWorld');
+  const [value, setValue] = useState<string | number>('Hello World');
   useEffect(() => {
-    nodeName && onChange('helloWorld')
+    nodeName && onChange('Hello World')
   }, [nodeName])
 
   const onChange = (val) => {
@@ -20,7 +20,7 @@ export default function Modal({ showModal, nodeName, ...props }: any) {
     if (Array.isArray(code)) {
       code = code.join('\n')
     }
-    const content = ` <pre> <code> ${code} </code>  </pre>`
+    const content = ` <pre><code>${code}</code>  </pre>`
     setCode(content)
     setTimeout(() => {
       hljs.highlightAll();
@@ -28,7 +28,7 @@ export default function Modal({ showModal, nodeName, ...props }: any) {
   }
 
   return <div {...props} className="modal" style={{ display: showModal ? '' : 'none' }}>
-    <Segmented options={['Hello_World', 'If', 'While']} value={value} onChange={onChange} />
+    <Segmented options={['Hello World', 'If', 'While']} value={value} onChange={onChange} />
     <div className='modal-content'>
           <div dangerouslySetInnerHTML={{ __html: code }} />
 
