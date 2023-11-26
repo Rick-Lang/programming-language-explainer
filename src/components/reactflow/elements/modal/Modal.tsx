@@ -18,7 +18,7 @@ export default function Modal({ showModal, nodeName, ...props }: any) {
     if (Array.isArray(code)) {
       code = code.join("\n");
     }
-    const content = ` <pre> <code> ${code} </code>  </pre>`;
+    const content = `<pre><code>${code} </code></pre>`;
     setCode(content);
     setTimeout(() => {
       hljs.highlightAll();
