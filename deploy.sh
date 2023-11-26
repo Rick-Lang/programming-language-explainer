@@ -21,9 +21,9 @@ git commit -m 'New commit'
 
 
 # If deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
+# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git main
 
-# If deploying to https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/rick-lang/programming-language-explainer.git master:gh-pages
+# If deploying to https://<USERNAME>.github.io/<REPO>. Use github token instead of password
+git push -f https://github.com/rick-lang/programming-language-explainer.git main:gh-pages
 
 cd -
