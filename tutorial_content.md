@@ -31,20 +31,23 @@ Transpiler is the easiest to make among all other implementations. Our task is t
 ## Lexer
 We have the source file ended in `.rickroll`, but we need to break the string down to meaningful keywords and values, and we call them, tokens. Click the interactive example - Lexer:
 
-You can look into the Rickroll source code, [src-py/Lexer.py](https://github.com/Rick-Lang/rickroll-lang/blob/main/src-py/Lexer.py)
+You can look into the Rickroll source code, [src-py/Lexer.py](https://github.com/Rick-Lang/rickroll-lang/blob/main/src/Lexer.py)
 ## Translator
 Since we have the tokens, we can map them to the corresponding keywords in Python! E.g. `i just wanna tell u how im feeling` is equivalent to `print()` in Python. Click the interactive example - Transpiler:
 
-You can look into the Rickroll source code, [src-py/pyrickroll.py](https://github.com/Rick-Lang/rickroll-lang/blob/main/src-py/pyrickroll.py), class TranslateToPython()
+You can look into the Rickroll source code, [src-py/pyrickroll.py](https://github.com/Rick-Lang/rickroll-lang/blob/main/src/pyrickroll.py), class TranslateToPython()
+
 ## Executor
-After storing our translated python code into `py_code`, we can execute it: `exec(transpiler.py_code, globals(), globals())`
+After storing our translated python code into `py_code`, we can execute it: `exec(transpiler.py_code, globals(), globals())`. In this case we transpile our code to Python, therefore the executor is the Python interpreter. If we transpile it to C/C++, the executor would be GCC/G++ or Clang/Clang++, which compile the converted code into binary to execute.
 
 # Making an Interpreter
-Different from transpiler, an interpreter requires a virtual machine and the usage of [abstract syntax tree](https://medium.com/basecs/leveling-up-ones-parsing-game-with-asts-d7a6fc2400ff), or AST, a tree structure that stores pieces of tokens to represent the order of code execution.
+Different from transpiler, an interpreter requires a virtual machine and the use of [abstract syntax tree](https://medium.com/basecs/leveling-up-ones-parsing-game-with-asts-d7a6fc2400ff), or AST, a tree structure that stores pieces of tokens to represent the order of code execution.
+
 ## Lexer
-We use the same lexer with transpiler, breaking them down into the same tokens
+We use the same lexer with transpiler, breaking the source code down into the same tokens
+
 ## Parser
-The tokens cannot represent the structure and order of execution of the code alone, and ASt is the solution. For example in the if control flow, the tokens are
+The tokens cannot represent the structure and order of execution of the code alone, and AST is the solution. For example in the if control flow, the tokens are
 ```python
 ['if', 'a', '==', '1', ':', 'print', '(', '"', '"Hello World!"', '"', ')']
 ```
@@ -56,6 +59,9 @@ In which the interpreter knows that `['a', '==', '1']` is the condition, and `['
 
 Click interactive example:
 
-Look into [src-py/Parser.py](https://github.com/Rick-Lang/rickroll-lang/blob/main/src-py/Parser.py) to see how it is implemented.
+![](Parser_eg.gif)
+
+Look into [src-py/Parser.py](https://github.com/Rick-Lang/rickroll-lang/blob/main/src/Parser.py) to see how it is implemented.
 
 ## Interpreter
+An interpreter, or virtual machine, interprets the AST and directly execute it, without converting it to machine code. To make an intepreter, we first have to traverse the AST.
